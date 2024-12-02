@@ -1,0 +1,2 @@
+com/example/qualitytestforandroid/BuildConfig.java
+ com.example.qualitytestforandroid.BuildConfig

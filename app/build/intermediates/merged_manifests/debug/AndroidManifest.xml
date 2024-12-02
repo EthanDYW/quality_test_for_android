@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.qualitytestforandroid"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="33" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" >
+        <activity
+            android:name="com.example.qualitytestforandroid.LoginActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustResize" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.qualitytestforandroid.MainActivity"
+            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.example.qualitytestforandroid.AdminLoginActivity"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:taskAffinity=".admin" />
+        <activity
+            android:name="com.example.qualitytestforandroid.AdminMainActivity"
+            android:clearTaskOnLaunch="false"
+            android:exported="false"
+            android:finishOnTaskLaunch="false"
+            android:launchMode="singleTask"
+            android:parentActivityName="com.example.qualitytestforandroid.AdminLoginActivity"
+            android:taskAffinity=".admin" />
+        <activity
+            android:name="com.example.qualitytestforandroid.DefectTypesActivity"
+            android:exported="false"
+            android:launchMode="standard"
+            android:noHistory="false"
+            android:parentActivityName="com.example.qualitytestforandroid.AdminMainActivity"
+            android:taskAffinity=".admin" />
+        <activity
+            android:name="com.example.qualitytestforandroid.PhotoLibrarySelectorActivity"
+            android:exported="false"
+            android:parentActivityName="com.example.qualitytestforandroid.DefectTypesActivity" />
+        <activity
+            android:name="com.example.qualitytestforandroid.PhotoLibraryActivity"
+            android:exported="false"
+            android:parentActivityName="com.example.qualitytestforandroid.PhotoLibrarySelectorActivity" />
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.example.qualitytestforandroid.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

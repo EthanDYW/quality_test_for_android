@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
@@ -82,37 +83,37 @@ public final class ActivityPhotoLibraryBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.bottomBar;
-      LinearLayout bottomBar = rootView.findViewById(id);
+      LinearLayout bottomBar = ViewBindings.findChildViewById(rootView, id);
       if (bottomBar == null) {
         break missingId;
       }
 
       id = R.id.deleteButton;
-      MaterialButton deleteButton = rootView.findViewById(id);
+      MaterialButton deleteButton = ViewBindings.findChildViewById(rootView, id);
       if (deleteButton == null) {
         break missingId;
       }
 
       id = R.id.deleteSelectedFab;
-      FloatingActionButton deleteSelectedFab = rootView.findViewById(id);
+      FloatingActionButton deleteSelectedFab = ViewBindings.findChildViewById(rootView, id);
       if (deleteSelectedFab == null) {
         break missingId;
       }
 
       id = R.id.photoRecyclerView;
-      RecyclerView photoRecyclerView = rootView.findViewById(id);
+      RecyclerView photoRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (photoRecyclerView == null) {
         break missingId;
       }
 
       id = R.id.toolbar;
-      MaterialToolbar toolbar = rootView.findViewById(id);
+      MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
       id = R.id.toolbarTitle;
-      TextView toolbarTitle = rootView.findViewById(id);
+      TextView toolbarTitle = ViewBindings.findChildViewById(rootView, id);
       if (toolbarTitle == null) {
         break missingId;
       }

@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.MaterialAutoCompleteTextView;
@@ -32,6 +33,9 @@ public final class ActivityLoginBinding implements ViewBinding {
   public final TextInputLayout employeeIdLayout;
 
   @NonNull
+  public final MaterialButton exportButton;
+
+  @NonNull
   public final MaterialButton loginButton;
 
   @NonNull
@@ -45,13 +49,15 @@ public final class ActivityLoginBinding implements ViewBinding {
 
   private ActivityLoginBinding(@NonNull ConstraintLayout rootView,
       @NonNull MaterialButton adminButton, @NonNull TextInputEditText employeeIdInput,
-      @NonNull TextInputLayout employeeIdLayout, @NonNull MaterialButton loginButton,
+      @NonNull TextInputLayout employeeIdLayout, @NonNull MaterialButton exportButton,
+      @NonNull MaterialButton loginButton,
       @NonNull MaterialAutoCompleteTextView productionLineInput,
       @NonNull TextInputLayout productionLineLayout, @NonNull TextView titleText) {
     this.rootView = rootView;
     this.adminButton = adminButton;
     this.employeeIdInput = employeeIdInput;
     this.employeeIdLayout = employeeIdLayout;
+    this.exportButton = exportButton;
     this.loginButton = loginButton;
     this.productionLineInput = productionLineInput;
     this.productionLineLayout = productionLineLayout;
@@ -86,49 +92,56 @@ public final class ActivityLoginBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.adminButton;
-      MaterialButton adminButton = rootView.findViewById(id);
+      MaterialButton adminButton = ViewBindings.findChildViewById(rootView, id);
       if (adminButton == null) {
         break missingId;
       }
 
       id = R.id.employeeIdInput;
-      TextInputEditText employeeIdInput = rootView.findViewById(id);
+      TextInputEditText employeeIdInput = ViewBindings.findChildViewById(rootView, id);
       if (employeeIdInput == null) {
         break missingId;
       }
 
       id = R.id.employeeIdLayout;
-      TextInputLayout employeeIdLayout = rootView.findViewById(id);
+      TextInputLayout employeeIdLayout = ViewBindings.findChildViewById(rootView, id);
       if (employeeIdLayout == null) {
         break missingId;
       }
 
+      id = R.id.exportButton;
+      MaterialButton exportButton = ViewBindings.findChildViewById(rootView, id);
+      if (exportButton == null) {
+        break missingId;
+      }
+
       id = R.id.loginButton;
-      MaterialButton loginButton = rootView.findViewById(id);
+      MaterialButton loginButton = ViewBindings.findChildViewById(rootView, id);
       if (loginButton == null) {
         break missingId;
       }
 
       id = R.id.productionLineInput;
-      MaterialAutoCompleteTextView productionLineInput = rootView.findViewById(id);
+      MaterialAutoCompleteTextView productionLineInput = ViewBindings.findChildViewById(rootView, id);
       if (productionLineInput == null) {
         break missingId;
       }
 
       id = R.id.productionLineLayout;
-      TextInputLayout productionLineLayout = rootView.findViewById(id);
+      TextInputLayout productionLineLayout = ViewBindings.findChildViewById(rootView, id);
       if (productionLineLayout == null) {
         break missingId;
       }
 
       id = R.id.titleText;
-      TextView titleText = rootView.findViewById(id);
+      TextView titleText = ViewBindings.findChildViewById(rootView, id);
       if (titleText == null) {
         break missingId;
       }
 
       return new ActivityLoginBinding((ConstraintLayout) rootView, adminButton, employeeIdInput,
-          employeeIdLayout, loginButton, productionLineInput, productionLineLayout, titleText);
+          employeeIdLayout, exportButton, loginButton, productionLineInput, productionLineLayout,
+          titleText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

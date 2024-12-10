@@ -1,1 +1,3 @@
 com.example.qualitytestforandroid.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -19,10 +20,15 @@ public final class ItemImageViewerBinding implements ViewBinding {
   private final FrameLayout rootView;
 
   @NonNull
+  public final ImageView checkMark;
+
+  @NonNull
   public final ImageView imageView;
 
-  private ItemImageViewerBinding(@NonNull FrameLayout rootView, @NonNull ImageView imageView) {
+  private ItemImageViewerBinding(@NonNull FrameLayout rootView, @NonNull ImageView checkMark,
+      @NonNull ImageView imageView) {
     this.rootView = rootView;
+    this.checkMark = checkMark;
     this.imageView = imageView;
   }
 
@@ -53,13 +59,19 @@ public final class ItemImageViewerBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.checkMark;
+      ImageView checkMark = ViewBindings.findChildViewById(rootView, id);
+      if (checkMark == null) {
+        break missingId;
+      }
+
       id = R.id.imageView;
-      ImageView imageView = rootView.findViewById(id);
+      ImageView imageView = ViewBindings.findChildViewById(rootView, id);
       if (imageView == null) {
         break missingId;
       }
 
-      return new ItemImageViewerBinding((FrameLayout) rootView, imageView);
+      return new ItemImageViewerBinding((FrameLayout) rootView, checkMark, imageView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

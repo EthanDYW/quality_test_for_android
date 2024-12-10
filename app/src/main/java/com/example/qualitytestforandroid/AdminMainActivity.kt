@@ -16,9 +16,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import android.util.Log
+import kotlinx.coroutines.*
 import java.io.File
 
-class AdminMainActivity : AppCompatActivity() {
+class AdminMainActivity : AppCompatActivity(), CoroutineScope {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ProductionLineAdapter
     private lateinit var addLineButton: MaterialButton
@@ -27,6 +28,9 @@ class AdminMainActivity : AppCompatActivity() {
     private lateinit var saveAndExitButton: MaterialButton
     private lateinit var exitWithoutSaveButton: MaterialButton
     lateinit var productionLineManager: ProductionLineManager
+    
+    private val job = Job()
+    override val coroutineContext = job + Dispatchers.Main
     
     private var isAddMode = false
     var isDeleteMode = false 
@@ -44,7 +48,6 @@ class AdminMainActivity : AppCompatActivity() {
         Log.d(TAG, "onCreate")
         setContentView(R.layout.activity_admin_main)
 
-        // 防止重新创建时重复初始化
         if (savedInstanceState == null) {
             initializeData()
         }
@@ -109,37 +112,8 @@ class AdminMainActivity : AppCompatActivity() {
         setupButtons()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        Log.d(TAG, "onSaveInstanceState")
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        Log.d(TAG, "onRestoreInstanceState")
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.d(TAG, "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(TAG, "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(TAG, "onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(TAG, "onStop")
-    }
-
     override fun onDestroy() {
+        job.cancel() // 取消所有协程
         super.onDestroy()
         Log.d(TAG, "onDestroy")
     }
@@ -161,7 +135,6 @@ class AdminMainActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         Log.d(TAG, "onActivityResult: requestCode=$requestCode, resultCode=$resultCode")
         if (requestCode == REQUEST_CODE_DEFECT_TYPES) {
-            // 从DefectTypesActivity返回后的处理
             if (resultCode == RESULT_OK) {
                 Log.d(TAG, "DefectTypesActivity returned OK")
             } else {
@@ -260,27 +233,38 @@ class ProductionLineAdapter(
     private val activity: AdminMainActivity 
 ) : RecyclerView.Adapter<ProductionLineAdapter.ViewHolder>() {
 
-    private fun renameProductionLineDirectory(oldName: String, newName: String) {
-        try {
-            val baseDir = activity.getExternalFilesDir(null)
-            val oldDir = File(baseDir, "production_lines/$oldName")
-            val newDir = File(baseDir, "production_lines/$newName")
+    private fun renameProductionLineDirectory(oldName: String, newName: String, onComplete: (Boolean) -> Unit) {
+        activity.launch {
+            try {
+                withContext(Dispatchers.IO) {
+                    val baseDir = activity.getExternalFilesDir(null)
+                    val oldDir = File(baseDir, "production_lines/$oldName")
+                    val newDir = File(baseDir, "production_lines/$newName")
 
-            if (oldDir.exists()) {
-                // 确保目标目录的父目录存在
-                newDir.parentFile?.mkdirs()
-                
-                // 重命名目录
-                val success = oldDir.renameTo(newDir)
-                if (!success) {
-                    // 如果重命名失败，尝试复制文件夹内容
-                    oldDir.copyRecursively(newDir, true)
-                    oldDir.deleteRecursively()
+                    var success = false
+                    if (oldDir.exists()) {
+                        newDir.parentFile?.mkdirs()
+                        success = oldDir.renameTo(newDir)
+                        if (!success) {
+                            oldDir.copyRecursively(newDir, true)
+                            oldDir.deleteRecursively()
+                            success = true
+                        }
+                    }
+                    success
+                }.let { success ->
+                    if (success) {
+                        onComplete(true)
+                    } else {
+                        Toast.makeText(activity, "重命名文件夹失败", Toast.LENGTH_SHORT).show()
+                        onComplete(false)
+                    }
                 }
+            } catch (e: Exception) {
+                Log.e("ProductionLineAdapter", "Error renaming directory", e)
+                Toast.makeText(activity, "重命名文件夹失败: ${e.message}", Toast.LENGTH_SHORT).show()
+                onComplete(false)
             }
-        } catch (e: Exception) {
-            Log.e("ProductionLineAdapter", "Error renaming directory", e)
-            Toast.makeText(activity, "重命名文件夹失败: ${e.message}", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -306,17 +290,45 @@ class ProductionLineAdapter(
         holder.editButton.setOnClickListener {
             if (holder.textView.isEnabled) {
                 // 保存修改
-                val newName = holder.textView.text?.toString() ?: ""
-                if (newName.isNotEmpty() && newName != productionLine) {
-                    // 先重命名文件夹
-                    renameProductionLineDirectory(productionLine, newName)
-                    // 再更新列表
+                val newName = holder.textView.text?.toString()?.trim() ?: ""
+                if (newName.isEmpty()) {
+                    Toast.makeText(activity, "产线名称不能为空", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                // 检查是否是新增产线（空字符串）
+                if (productionLine.isEmpty()) {
+                    // 新增产线的情况
                     productionLines[position] = newName
                     notifyItemChanged(position)
                     activity.hasUnsavedChanges = true
+                    holder.textView.isEnabled = false
+                    holder.editButton.text = "编辑"
+                } else if (newName != productionLine) {
+                    // 修改现有产线的情况
+                    // 显示加载对话框
+                    val progressDialog = AlertDialog.Builder(activity)
+                        .setMessage("正在保存更改...")
+                        .setCancelable(false)
+                        .create()
+                    progressDialog.show()
+
+                    // 在后台线程中重命名文件夹
+                    renameProductionLineDirectory(productionLine, newName) { success ->
+                        progressDialog.dismiss()
+                        if (success) {
+                            productionLines[position] = newName
+                            notifyItemChanged(position)
+                            activity.hasUnsavedChanges = true
+                            holder.textView.isEnabled = false
+                            holder.editButton.text = "编辑"
+                        }
+                    }
+                } else {
+                    // 名称没有改变
+                    holder.textView.isEnabled = false
+                    holder.editButton.text = "编辑"
                 }
-                holder.textView.isEnabled = false
-                holder.editButton.text = "编辑"
             } else {
                 // 进入编辑模式
                 holder.textView.isEnabled = true
@@ -329,17 +341,42 @@ class ProductionLineAdapter(
         holder.textView.setOnEditorActionListener { _, actionId, event ->
             if (actionId == EditorInfo.IME_ACTION_DONE || 
                 (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER && event.action == KeyEvent.ACTION_DOWN)) {
-                val newName = holder.textView.text?.toString() ?: ""
-                if (newName.isNotEmpty() && newName != productionLine) {
-                    // 先重命名文件夹
-                    renameProductionLineDirectory(productionLine, newName)
-                    // 再更新列表
+                val newName = holder.textView.text?.toString()?.trim() ?: ""
+                if (newName.isEmpty()) {
+                    Toast.makeText(activity, "产线名称不能为空", Toast.LENGTH_SHORT).show()
+                    return@setOnEditorActionListener true
+                }
+
+                // 检查是否是新增产线（空字符串）
+                if (productionLine.isEmpty()) {
+                    // 新增产线的情况
                     productionLines[position] = newName
                     notifyItemChanged(position)
                     activity.hasUnsavedChanges = true
+                    holder.textView.isEnabled = false
+                    holder.editButton.text = "编辑"
+                } else if (newName != productionLine) {
+                    // 修改现有产线的情况
+                    val progressDialog = AlertDialog.Builder(activity)
+                        .setMessage("正在保存更改...")
+                        .setCancelable(false)
+                        .create()
+                    progressDialog.show()
+
+                    renameProductionLineDirectory(productionLine, newName) { success ->
+                        progressDialog.dismiss()
+                        if (success) {
+                            productionLines[position] = newName
+                            notifyItemChanged(position)
+                            activity.hasUnsavedChanges = true
+                            holder.textView.isEnabled = false
+                            holder.editButton.text = "编辑"
+                        }
+                    }
+                } else {
+                    holder.textView.isEnabled = false
+                    holder.editButton.text = "编辑"
                 }
-                holder.textView.isEnabled = false
-                holder.editButton.text = "编辑"
                 true
             } else {
                 false

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
@@ -64,7 +65,7 @@ public final class ItemPhotoBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.checkmarkImageView;
-      ImageView checkmarkImageView = rootView.findViewById(id);
+      ImageView checkmarkImageView = ViewBindings.findChildViewById(rootView, id);
       if (checkmarkImageView == null) {
         break missingId;
       }
@@ -72,7 +73,7 @@ public final class ItemPhotoBinding implements ViewBinding {
       MaterialCardView photoCard = (MaterialCardView) rootView;
 
       id = R.id.photoImageView;
-      ImageView photoImageView = rootView.findViewById(id);
+      ImageView photoImageView = ViewBindings.findChildViewById(rootView, id);
       if (photoImageView == null) {
         break missingId;
       }

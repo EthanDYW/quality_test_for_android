@@ -1,154 +1,162 @@
 [
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_admin_main.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_admin_main.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_green_check_mark.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\green_check_mark.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_ok2.jpg.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/ok2.jpg"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_defect1.jpg.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/defect1.jpg"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ok2.jpg.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\ok2.jpg"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_admin.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_admin.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_remove_photo.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_remove_photo.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_login.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_login.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_thumbnail_border.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/thumbnail_border.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_photo.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_photo.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_photo.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_photo.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_defect2.jpg.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\defect2.jpg"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_remove_photo.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_remove_photo.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_admin_login.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_admin_login.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_admin_login.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_admin_login.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_chart_display.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_chart_display.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_login.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_check_circle_background.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\check_circle_background.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_photo_library.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_photo_library.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_thumbnail_border.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\thumbnail_border.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_defect3.jpg.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/defect3.jpg"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_selected_image_background.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\selected_image_background.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_photo_library_selector.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_photo_library_selector.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ok1.jpg.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\ok1.jpg"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_selected_image_background.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/selected_image_background.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_defect1.jpg.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\defect1.jpg"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_main.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_main.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_check_mark.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\check_mark.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_dialog_connect_server.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/dialog_connect_server.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_image_viewer.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_image_viewer.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_export_records.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_export_records.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_defect3.jpg.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\defect3.jpg"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_defect2.jpg.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/defect2.jpg"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_defect_type.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_defect_type.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_ok1.jpg.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/ok1.jpg"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_photo.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\ic_add_photo.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_ic_error_image.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/ic_error_image.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_defect_types.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_defect_types.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_image_border.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/image_border.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_image_border.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\image_border.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_ic_delete.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/ic_delete.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button_background.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\button_background.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_defect4.jpg.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/defect4.jpg"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_check_background.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/check_background.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_error_image.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\ic_error_image.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_green_check_mark.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/green_check_mark.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo_library_selector.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_photo_library_selector.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_defect_type.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_defect_type.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_check_background.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\check_background.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_production_line.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_production_line.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_delete.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\ic_delete.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_add_photo.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_add_photo.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_thumbnail.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_thumbnail.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_production_line.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_production_line.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_production_line.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_production_line.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\drawable_defect4.jpg.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\drawable\\defect4.jpg"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_check_mark.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/check_mark.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_dialog_date_range_picker.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/dialog_date_range_picker.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_item_image_viewer.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_image_viewer.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_add_photo.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_add_photo.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_admin_main.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_admin_main.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_photo_library.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\activity_photo_library.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_button_background.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/button_background.xml"
     },
     {
-        "merged": "E:\\quality_test_for_android\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_thumbnail.xml.flat",
-        "source": "E:\\quality_test_for_android\\app\\src\\main\\res\\layout\\item_thumbnail.xml"
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/layout_activity_defect_types.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_defect_types.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_check_circle_background.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/check_circle_background.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-merged_res-33:/drawable_ic_add_photo.xml.flat",
+        "source": "com.example.qualitytestforandroid.app-main-35:/drawable/ic_add_photo.xml"
     }
 ]

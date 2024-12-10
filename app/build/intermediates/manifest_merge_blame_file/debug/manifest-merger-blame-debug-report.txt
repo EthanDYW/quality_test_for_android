@@ -1,149 +1,181 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.example.qualitytestforandroid"
-4    android:versionCode="1"
-5    android:versionName="1.0" >
+4    android:versionCode="2"
+5    android:versionName="1.1" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="24"
+8        android:minSdkVersion="26"
 8-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="33" />
 9-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:5:5-66:19
-12        android:allowBackup="true"
-12-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.8.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\f9bc3ade2a6bdd137307fd545e2f219d\core-1.8.0\AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:extractNativeLibs="false"
-16        android:icon="@mipmap/ic_launcher"
-16-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:7:9-43
-17        android:label="@string/app_name"
-17-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:8:9-41
-18        android:roundIcon="@mipmap/ic_launcher_round"
-18-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:9:9-54
-19        android:supportsRtl="true"
-19-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:10:9-35
-20        android:testOnly="true"
-21        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" >
-21-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:11:9-76
-22        <activity
-22-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:13:9-24:20
-23            android:name="com.example.qualitytestforandroid.LoginActivity"
-23-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:14:13-42
-24            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-24-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:19:13-87
-25            android:exported="true"
-25-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:15:13-36
-26            android:launchMode="singleTask"
-26-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:16:13-44
-27            android:screenOrientation="landscape"
-27-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:17:13-50
-28            android:windowSoftInputMode="adjustResize" >
-28-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:18:13-55
-29            <intent-filter>
-29-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:20:13-23:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:21:17-69
-30-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:21:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:22:17-77
-32-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:22:27-74
-33            </intent-filter>
-34        </activity>
-35        <activity
-35-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:26:9-31:90
-36            android:name="com.example.qualitytestforandroid.MainActivity"
-36-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:27:13-41
-37            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-37-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:31:13-87
-38            android:exported="false"
-38-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:28:13-37
-39            android:launchMode="singleTop"
-39-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:29:13-43
-40            android:screenOrientation="landscape" />
-40-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:30:13-50
-41        <activity
-41-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:33:9-37:45
-42            android:name="com.example.qualitytestforandroid.AdminLoginActivity"
-42-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:34:13-47
-43            android:exported="false"
-43-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:35:13-37
-44            android:launchMode="singleTask"
-44-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:36:13-44
-45            android:taskAffinity=".admin" />
-45-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:37:13-42
-46        <activity
-46-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:39:9-46:45
-47            android:name="com.example.qualitytestforandroid.AdminMainActivity"
-47-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:40:13-46
-48            android:clearTaskOnLaunch="false"
-48-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:44:13-46
-49            android:exported="false"
-49-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:41:13-37
-50            android:finishOnTaskLaunch="false"
-50-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:45:13-47
-51            android:launchMode="singleTask"
-51-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:42:13-44
-52            android:parentActivityName="com.example.qualitytestforandroid.AdminLoginActivity"
-52-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:43:13-61
-53            android:taskAffinity=".admin" />
-53-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:46:13-42
-54        <activity
-54-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:48:9-54:45
-55            android:name="com.example.qualitytestforandroid.DefectTypesActivity"
-55-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:49:13-48
-56            android:exported="false"
-56-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:50:13-37
-57            android:launchMode="standard"
-57-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:51:13-42
-58            android:noHistory="false"
-58-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:53:13-38
-59            android:parentActivityName="com.example.qualitytestforandroid.AdminMainActivity"
-59-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:52:13-60
-60            android:taskAffinity=".admin" />
-60-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:54:13-42
-61        <activity
-61-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:56:9-59:65
-62            android:name="com.example.qualitytestforandroid.PhotoLibrarySelectorActivity"
-62-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:57:13-57
-63            android:exported="false"
-63-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:58:13-37
-64            android:parentActivityName="com.example.qualitytestforandroid.DefectTypesActivity" />
-64-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:59:13-62
-65        <activity
-65-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:61:9-64:74
-66            android:name="com.example.qualitytestforandroid.PhotoLibraryActivity"
-66-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:62:13-49
-67            android:exported="false"
-67-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:63:13-37
-68            android:parentActivityName="com.example.qualitytestforandroid.PhotoLibrarySelectorActivity" />
-68-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:64:13-71
-69
-70        <provider
-70-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-71            android:name="androidx.startup.InitializationProvider"
-71-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-72            android:authorities="com.example.qualitytestforandroid.androidx-startup"
-72-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-73            android:exported="false" >
-73-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-74            <meta-data
-74-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-75                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-75-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-76                android:value="androidx.startup" />
-76-->[androidx.emoji2:emoji2:1.2.0] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\cd66e4a1c6d75a691d8fea52b1950664\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-77            <meta-data
-77-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\d14a93955fe96a44876a38f0fd5e426f\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-78                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-78-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\d14a93955fe96a44876a38f0fd5e426f\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-79                android:value="androidx.startup" />
-79-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\Ethan D\.gradle\caches\transforms-2\files-2.1\d14a93955fe96a44876a38f0fd5e426f\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-80        </provider>
-81    </application>
-82
-83</manifest>
+11    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+11-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:5:5-80
+11-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:5:22-77
+12    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+12-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:6:5-81
+12-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:6:22-78
+13
+14    <application
+14-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:8:5-84:19
+15        android:allowBackup="true"
+15-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:9:9-35
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.7.0] C:\Users\Ethan D\.gradle\caches\transforms-3\e36cb75ae4f72b56337362533afd3af2\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+17        android:debuggable="true"
+18        android:extractNativeLibs="false"
+19        android:icon="@mipmap/ic_launcher"
+19-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:10:9-43
+20        android:label="@string/app_name"
+20-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:11:9-41
+21        android:roundIcon="@mipmap/ic_launcher_round"
+21-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:12:9-54
+22        android:supportsRtl="true"
+22-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:13:9-35
+23        android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" >
+23-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:14:9-76
+24        <activity
+24-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:16:9-27:20
+25            android:name="com.example.qualitytestforandroid.LoginActivity"
+25-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:17:13-42
+26            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+26-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:22:13-87
+27            android:exported="true"
+27-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:18:13-36
+28            android:launchMode="singleTask"
+28-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:19:13-44
+29            android:screenOrientation="landscape"
+29-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:20:13-50
+30            android:windowSoftInputMode="adjustResize" >
+30-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:21:13-55
+31            <intent-filter>
+31-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:23:13-26:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:24:17-69
+32-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:24:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:25:17-77
+34-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:25:27-74
+35            </intent-filter>
+36        </activity>
+37        <activity
+37-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:29:9-34:90
+38            android:name="com.example.qualitytestforandroid.MainActivity"
+38-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:30:13-41
+39            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+39-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:34:13-87
+40            android:exported="false"
+40-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:31:13-37
+41            android:launchMode="singleTop"
+41-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:32:13-43
+42            android:screenOrientation="landscape" />
+42-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:33:13-50
+43        <activity
+43-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:36:9-40:45
+44            android:name="com.example.qualitytestforandroid.AdminLoginActivity"
+44-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:37:13-47
+45            android:exported="false"
+45-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:38:13-37
+46            android:launchMode="singleTask"
+46-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:39:13-44
+47            android:taskAffinity=".admin" />
+47-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:40:13-42
+48        <activity
+48-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:42:9-49:45
+49            android:name="com.example.qualitytestforandroid.AdminMainActivity"
+49-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:43:13-46
+50            android:clearTaskOnLaunch="false"
+50-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:47:13-46
+51            android:exported="false"
+51-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:44:13-37
+52            android:finishOnTaskLaunch="false"
+52-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:48:13-47
+53            android:launchMode="singleTask"
+53-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:45:13-44
+54            android:parentActivityName="com.example.qualitytestforandroid.AdminLoginActivity"
+54-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:46:13-61
+55            android:taskAffinity=".admin" />
+55-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:49:13-42
+56        <activity
+56-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:51:9-57:45
+57            android:name="com.example.qualitytestforandroid.DefectTypesActivity"
+57-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:52:13-48
+58            android:exported="false"
+58-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:53:13-37
+59            android:launchMode="standard"
+59-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:54:13-42
+60            android:noHistory="false"
+60-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:56:13-38
+61            android:parentActivityName="com.example.qualitytestforandroid.AdminMainActivity"
+61-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:55:13-60
+62            android:taskAffinity=".admin" />
+62-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:57:13-42
+63        <activity
+63-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:59:9-62:65
+64            android:name="com.example.qualitytestforandroid.PhotoLibrarySelectorActivity"
+64-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:60:13-57
+65            android:exported="false"
+65-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:61:13-37
+66            android:parentActivityName="com.example.qualitytestforandroid.DefectTypesActivity" />
+66-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:62:13-62
+67        <activity
+67-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:64:9-67:74
+68            android:name="com.example.qualitytestforandroid.PhotoLibraryActivity"
+68-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:65:13-49
+69            android:exported="false"
+69-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:66:13-37
+70            android:parentActivityName="com.example.qualitytestforandroid.PhotoLibrarySelectorActivity" />
+70-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:67:13-71
+71        <activity
+71-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:69:9-72:53
+72            android:name="com.example.qualitytestforandroid.ExportRecordsActivity"
+72-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:70:13-50
+73            android:exported="false"
+73-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:71:13-37
+74            android:screenOrientation="landscape" />
+74-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:72:13-50
+75        <activity
+75-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:74:9-77:81
+76            android:name="com.example.qualitytestforandroid.ui.ChartDisplayActivity"
+76-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:75:13-52
+77            android:label="质量测试统计"
+77-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:76:13-35
+78            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
+78-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:77:13-78
+79        <activity
+79-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:79:9-83:90
+80            android:name="com.example.qualitytestforandroid.ui.ProductionLineActivity"
+80-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:80:13-54
+81            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+81-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:83:13-87
+82            android:exported="false"
+82-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:81:13-37
+83            android:screenOrientation="landscape" />
+83-->E:\quality_test_for_android\app\src\main\AndroidManifest.xml:82:13-50
+84
+85        <provider
+85-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+86            android:name="androidx.startup.InitializationProvider"
+86-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+87            android:authorities="com.example.qualitytestforandroid.androidx-startup"
+87-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+88            android:exported="false" >
+88-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+89            <meta-data
+89-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+90                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+90-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+91                android:value="androidx.startup" />
+91-->[androidx.emoji2:emoji2:1.0.0] C:\Users\Ethan D\.gradle\caches\transforms-3\ca1977ef86c10098c974d21a9795df6e\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+92            <meta-data
+92-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ethan D\.gradle\caches\transforms-3\0941d6c05a1b5773d94a6bfa88dc6daa\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+93                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+93-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ethan D\.gradle\caches\transforms-3\0941d6c05a1b5773d94a6bfa88dc6daa\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+94                android:value="androidx.startup" />
+94-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\Ethan D\.gradle\caches\transforms-3\0941d6c05a1b5773d94a6bfa88dc6daa\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+95        </provider>
+96    </application>
+97
+98</manifest>

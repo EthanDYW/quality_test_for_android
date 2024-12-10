@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
@@ -70,25 +71,25 @@ public final class ActivityPhotoLibrarySelectorBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.ngLibraryButton;
-      MaterialButton ngLibraryButton = rootView.findViewById(id);
+      MaterialButton ngLibraryButton = ViewBindings.findChildViewById(rootView, id);
       if (ngLibraryButton == null) {
         break missingId;
       }
 
       id = R.id.okLibraryButton;
-      MaterialButton okLibraryButton = rootView.findViewById(id);
+      MaterialButton okLibraryButton = ViewBindings.findChildViewById(rootView, id);
       if (okLibraryButton == null) {
         break missingId;
       }
 
       id = R.id.toolbar;
-      MaterialToolbar toolbar = rootView.findViewById(id);
+      MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
       id = R.id.toolbarTitle;
-      TextView toolbarTitle = rootView.findViewById(id);
+      TextView toolbarTitle = ViewBindings.findChildViewById(rootView, id);
       if (toolbarTitle == null) {
         break missingId;
       }

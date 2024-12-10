@@ -1,15 +1,12 @@
 buildscript {
-    ext {
-        kotlin_version = '1.6.21'
-        java_version = JavaVersion.VERSION_1_8
-    }
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:7.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21"
     }
 }
 
@@ -17,9 +14,61 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://jitpack.io' }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+tasks.register('cleanBuildCache') {
+    doLast {
+        def dirsToClean = [
+            new File(project.buildDir, 'cache'),
+            new File(project.buildDir, 'intermediates'),
+            new File(project.buildDir, 'intermediates/desugar_graph'),
+            new File(project.buildDir, 'intermediates/dex_archive_input_jar_hashes')
+        ]
+        
+        dirsToClean.each { dir ->
+            if (dir.exists()) {
+                try {
+                    if (dir.isDirectory()) {
+                        dir.deleteDir()
+                    } else {
+                        dir.delete()
+                    }
+                } catch (Exception e) {
+                    println "Warning: Failed to delete ${dir.path}: ${e.message}"
+                    // 如果删除失败，尝试强制删除
+                    try {
+                        if (dir.exists()) {
+                            "cmd /c rmdir /s /q ${dir.path}".execute()
+                        }
+                    } catch (Exception e2) {
+                        println "Error: Could not force delete ${dir.path}: ${e2.message}"
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.register('forceCleanBuild') {
+    dependsOn 'clean', 'cleanBuildCache'
+    doLast {
+        def buildDir = new File(project.buildDir.path)
+        if (buildDir.exists()) {
+            try {
+                "cmd /c rmdir /s /q ${buildDir.path}".execute()
+            } catch (Exception e) {
+                println "Warning: Failed to force clean build directory: ${e.message}"
+            }
+        }
+    }
+}
+
+tasks.named('clean') {
+    dependsOn 'cleanBuildCache'
 }

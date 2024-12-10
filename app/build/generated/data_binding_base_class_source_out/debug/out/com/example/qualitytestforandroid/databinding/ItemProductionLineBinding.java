@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -80,37 +81,37 @@ public final class ItemProductionLineBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.checkBox;
-      CheckBox checkBox = rootView.findViewById(id);
+      CheckBox checkBox = ViewBindings.findChildViewById(rootView, id);
       if (checkBox == null) {
         break missingId;
       }
 
       id = R.id.defectTypesButton;
-      MaterialButton defectTypesButton = rootView.findViewById(id);
+      MaterialButton defectTypesButton = ViewBindings.findChildViewById(rootView, id);
       if (defectTypesButton == null) {
         break missingId;
       }
 
       id = R.id.deleteButton;
-      MaterialButton deleteButton = rootView.findViewById(id);
+      MaterialButton deleteButton = ViewBindings.findChildViewById(rootView, id);
       if (deleteButton == null) {
         break missingId;
       }
 
       id = R.id.editButton;
-      MaterialButton editButton = rootView.findViewById(id);
+      MaterialButton editButton = ViewBindings.findChildViewById(rootView, id);
       if (editButton == null) {
         break missingId;
       }
 
       id = R.id.lineNameInput;
-      TextInputEditText lineNameInput = rootView.findViewById(id);
+      TextInputEditText lineNameInput = ViewBindings.findChildViewById(rootView, id);
       if (lineNameInput == null) {
         break missingId;
       }
 
       id = R.id.lineNameLayout;
-      TextInputLayout lineNameLayout = rootView.findViewById(id);
+      TextInputLayout lineNameLayout = ViewBindings.findChildViewById(rootView, id);
       if (lineNameLayout == null) {
         break missingId;
       }

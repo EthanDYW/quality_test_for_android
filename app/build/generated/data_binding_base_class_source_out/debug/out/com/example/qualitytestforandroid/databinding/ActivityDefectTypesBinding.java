@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.button.MaterialButton;
@@ -90,49 +91,49 @@ public final class ActivityDefectTypesBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.actionBar;
-      LinearLayout actionBar = rootView.findViewById(id);
+      LinearLayout actionBar = ViewBindings.findChildViewById(rootView, id);
       if (actionBar == null) {
         break missingId;
       }
 
       id = R.id.addDefectButton;
-      MaterialButton addDefectButton = rootView.findViewById(id);
+      MaterialButton addDefectButton = ViewBindings.findChildViewById(rootView, id);
       if (addDefectButton == null) {
         break missingId;
       }
 
       id = R.id.defectTypesRecyclerView;
-      RecyclerView defectTypesRecyclerView = rootView.findViewById(id);
+      RecyclerView defectTypesRecyclerView = ViewBindings.findChildViewById(rootView, id);
       if (defectTypesRecyclerView == null) {
         break missingId;
       }
 
       id = R.id.exitWithoutSaveButton;
-      MaterialButton exitWithoutSaveButton = rootView.findViewById(id);
+      MaterialButton exitWithoutSaveButton = ViewBindings.findChildViewById(rootView, id);
       if (exitWithoutSaveButton == null) {
         break missingId;
       }
 
       id = R.id.saveAndExitButton;
-      MaterialButton saveAndExitButton = rootView.findViewById(id);
+      MaterialButton saveAndExitButton = ViewBindings.findChildViewById(rootView, id);
       if (saveAndExitButton == null) {
         break missingId;
       }
 
       id = R.id.saveButton;
-      MaterialButton saveButton = rootView.findViewById(id);
+      MaterialButton saveButton = ViewBindings.findChildViewById(rootView, id);
       if (saveButton == null) {
         break missingId;
       }
 
       id = R.id.toolbar;
-      MaterialToolbar toolbar = rootView.findViewById(id);
+      MaterialToolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
       id = R.id.toolbarTitle;
-      TextView toolbarTitle = rootView.findViewById(id);
+      TextView toolbarTitle = ViewBindings.findChildViewById(rootView, id);
       if (toolbarTitle == null) {
         break missingId;
       }

@@ -23,14 +23,20 @@
         app:layout_constraintStart_toEndOf="@id/checkBox"
         app:layout_constraintEnd_toStartOf="@id/editButton"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/lineNameInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:maxLines="1" />
+            android:maxLines="1"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:background="@android:color/white"
+            android:padding="12dp"
+            android:imeOptions="actionDone" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

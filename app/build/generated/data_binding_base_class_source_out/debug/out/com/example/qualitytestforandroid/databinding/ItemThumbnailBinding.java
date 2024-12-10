@@ -4,11 +4,13 @@ package com.example.qualitytestforandroid.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -16,19 +18,38 @@ import java.lang.String;
 
 public final class ItemThumbnailBinding implements ViewBinding {
   @NonNull
-  private final CardView rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageView thumbnailView;
+  public final FrameLayout selectionBorder;
 
-  private ItemThumbnailBinding(@NonNull CardView rootView, @NonNull ImageView thumbnailView) {
+  @NonNull
+  public final View selectionOverlay;
+
+  @NonNull
+  public final ImageView thumbnailCheckMark;
+
+  @NonNull
+  public final ImageView thumbnailImage;
+
+  @NonNull
+  public final ImageView thumbnailImageUnselected;
+
+  private ItemThumbnailBinding(@NonNull ConstraintLayout rootView,
+      @NonNull FrameLayout selectionBorder, @NonNull View selectionOverlay,
+      @NonNull ImageView thumbnailCheckMark, @NonNull ImageView thumbnailImage,
+      @NonNull ImageView thumbnailImageUnselected) {
     this.rootView = rootView;
-    this.thumbnailView = thumbnailView;
+    this.selectionBorder = selectionBorder;
+    this.selectionOverlay = selectionOverlay;
+    this.thumbnailCheckMark = thumbnailCheckMark;
+    this.thumbnailImage = thumbnailImage;
+    this.thumbnailImageUnselected = thumbnailImageUnselected;
   }
 
   @Override
   @NonNull
-  public CardView getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -53,13 +74,38 @@ public final class ItemThumbnailBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.thumbnailView;
-      ImageView thumbnailView = rootView.findViewById(id);
-      if (thumbnailView == null) {
+      id = R.id.selectionBorder;
+      FrameLayout selectionBorder = ViewBindings.findChildViewById(rootView, id);
+      if (selectionBorder == null) {
         break missingId;
       }
 
-      return new ItemThumbnailBinding((CardView) rootView, thumbnailView);
+      id = R.id.selectionOverlay;
+      View selectionOverlay = ViewBindings.findChildViewById(rootView, id);
+      if (selectionOverlay == null) {
+        break missingId;
+      }
+
+      id = R.id.thumbnailCheckMark;
+      ImageView thumbnailCheckMark = ViewBindings.findChildViewById(rootView, id);
+      if (thumbnailCheckMark == null) {
+        break missingId;
+      }
+
+      id = R.id.thumbnailImage;
+      ImageView thumbnailImage = ViewBindings.findChildViewById(rootView, id);
+      if (thumbnailImage == null) {
+        break missingId;
+      }
+
+      id = R.id.thumbnailImageUnselected;
+      ImageView thumbnailImageUnselected = ViewBindings.findChildViewById(rootView, id);
+      if (thumbnailImageUnselected == null) {
+        break missingId;
+      }
+
+      return new ItemThumbnailBinding((ConstraintLayout) rootView, selectionBorder,
+          selectionOverlay, thumbnailCheckMark, thumbnailImage, thumbnailImageUnselected);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

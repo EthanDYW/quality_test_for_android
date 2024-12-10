@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -74,31 +75,31 @@ public final class ItemDefectTypeBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.cancelButton;
-      MaterialButton cancelButton = rootView.findViewById(id);
+      MaterialButton cancelButton = ViewBindings.findChildViewById(rootView, id);
       if (cancelButton == null) {
         break missingId;
       }
 
       id = R.id.defectNameInput;
-      TextInputEditText defectNameInput = rootView.findViewById(id);
+      TextInputEditText defectNameInput = ViewBindings.findChildViewById(rootView, id);
       if (defectNameInput == null) {
         break missingId;
       }
 
       id = R.id.editButton;
-      MaterialButton editButton = rootView.findViewById(id);
+      MaterialButton editButton = ViewBindings.findChildViewById(rootView, id);
       if (editButton == null) {
         break missingId;
       }
 
       id = R.id.photoButton;
-      MaterialButton photoButton = rootView.findViewById(id);
+      MaterialButton photoButton = ViewBindings.findChildViewById(rootView, id);
       if (photoButton == null) {
         break missingId;
       }
 
       id = R.id.saveButton;
-      MaterialButton saveButton = rootView.findViewById(id);
+      MaterialButton saveButton = ViewBindings.findChildViewById(rootView, id);
       if (saveButton == null) {
         break missingId;
       }

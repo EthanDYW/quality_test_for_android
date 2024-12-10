@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "E:\\quality_test_for_android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lo\\values-lo.xml",
+            "outputFile": "com.example.qualitytestforandroid.app-mergeDebugResources-31:/values-lo/values-lo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Ethan D\\.gradle\\caches\\transforms-2\\files-2.1\\f9bc3ade2a6bdd137307fd545e2f219d\\core-1.8.0\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Ethan D\\.gradle\\caches\\transforms-3\\e36cb75ae4f72b56337362533afd3af2\\transformed\\core-1.7.0\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ethan D\\.gradle\\caches\\transforms-2\\files-2.1\\0d0b668d8043a8ec40d164e748f2f5ee\\appcompat-1.5.0\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Ethan D\\.gradle\\caches\\transforms-3\\7bbb20b082eda0ab8ee79f2798d0352b\\transformed\\appcompat-1.4.1\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +38,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Ethan D\\.gradle\\caches\\transforms-2\\files-2.1\\1c07f15d1042596144109ed6edfced7a\\material-1.6.0\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Ethan D\\.gradle\\caches\\transforms-3\\84f6f65ed591939d618148a5bbd6b583\\transformed\\material-1.5.0\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

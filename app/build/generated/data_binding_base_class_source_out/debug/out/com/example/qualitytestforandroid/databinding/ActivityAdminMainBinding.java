@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
@@ -89,49 +90,49 @@ public final class ActivityAdminMainBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.addLineButton;
-      MaterialButton addLineButton = rootView.findViewById(id);
+      MaterialButton addLineButton = ViewBindings.findChildViewById(rootView, id);
       if (addLineButton == null) {
         break missingId;
       }
 
       id = R.id.deleteLineButton;
-      MaterialButton deleteLineButton = rootView.findViewById(id);
+      MaterialButton deleteLineButton = ViewBindings.findChildViewById(rootView, id);
       if (deleteLineButton == null) {
         break missingId;
       }
 
       id = R.id.exitWithoutSaveButton;
-      MaterialButton exitWithoutSaveButton = rootView.findViewById(id);
+      MaterialButton exitWithoutSaveButton = ViewBindings.findChildViewById(rootView, id);
       if (exitWithoutSaveButton == null) {
         break missingId;
       }
 
       id = R.id.recyclerView;
-      RecyclerView recyclerView = rootView.findViewById(id);
+      RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
       if (recyclerView == null) {
         break missingId;
       }
 
       id = R.id.saveAndExitButton;
-      MaterialButton saveAndExitButton = rootView.findViewById(id);
+      MaterialButton saveAndExitButton = ViewBindings.findChildViewById(rootView, id);
       if (saveAndExitButton == null) {
         break missingId;
       }
 
       id = R.id.saveButton;
-      MaterialButton saveButton = rootView.findViewById(id);
+      MaterialButton saveButton = ViewBindings.findChildViewById(rootView, id);
       if (saveButton == null) {
         break missingId;
       }
 
       id = R.id.titleText;
-      TextView titleText = rootView.findViewById(id);
+      TextView titleText = ViewBindings.findChildViewById(rootView, id);
       if (titleText == null) {
         break missingId;
       }
 
       id = R.id.topButtonsLayout;
-      LinearLayout topButtonsLayout = rootView.findViewById(id);
+      LinearLayout topButtonsLayout = ViewBindings.findChildViewById(rootView, id);
       if (topButtonsLayout == null) {
         break missingId;
       }

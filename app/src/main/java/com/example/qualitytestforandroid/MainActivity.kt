@@ -1,12 +1,17 @@
 package com.example.qualitytestforandroid
 
+import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.textfield.TextInputEditText
 import java.io.File
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +19,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import kotlin.random.Random
+import java.util.Date
+import com.example.qualitytestforandroid.data.TestRecord
+import com.example.qualitytestforandroid.data.TestRecordDatabase
+import com.example.qualitytestforandroid.data.QualityTestRecord
+import com.example.qualitytestforandroid.databinding.ActivityMainBinding
+import com.example.qualitytestforandroid.network.NetworkService
+import com.example.qualitytestforandroid.ui.ChartDisplayActivity
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var titleText: TextView
@@ -30,13 +43,24 @@ class MainActivity : AppCompatActivity() {
     private var currentImages = mutableListOf<File>()
     private var currentNGIndices = mutableSetOf<Int>()
 
+    private lateinit var testRecordDatabase: TestRecordDatabase
+    private var testStartTime: Date? = null
+    private val defectTypeErrors = mutableMapOf<String, Int>()
+
+    private lateinit var binding: ActivityMainBinding
+    private var networkService: NetworkService? = null
+
     companion object {
         private const val TAG = "MainActivity"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        testRecordDatabase = TestRecordDatabase(this)
+        testStartTime = Date()
 
         // 初始化视图
         initializeViews()
@@ -110,33 +134,44 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadDefectData() {
+        val menuLayout = findViewById<LinearLayout>(R.id.menuLayout)
+        menuLayout.removeAllViews()
+
+        defectTypes.clear()
+        currentImages.clear()
+        currentNGIndices.clear()
+        completedDefectTypes.clear()
+
         try {
             val baseDir = getExternalFilesDir(null) ?: throw IllegalStateException("External storage is not available")
             val productionLineDir = File(baseDir, "production_lines/$currentProductionLine")
-            val defectTypesFile = File(productionLineDir, "defect_types.txt")
-
-            if (!defectTypesFile.exists()) {
-                Log.e(TAG, "Defect types file not found: ${defectTypesFile.absolutePath}")
-                showError("未找到产线${currentProductionLine}的缺陷类型数据")
-                finish()
+            
+            if (!productionLineDir.exists() || !productionLineDir.isDirectory) {
+                Log.e(TAG, "Production line directory not found: ${productionLineDir.absolutePath}")
+                showError("未找到产线目录")
                 return
             }
 
-            // 读取缺陷类型列表并随机排序
+            // 读取缺陷类型文件
+            val defectTypesFile = File(productionLineDir, "defect_types.txt")
+            if (!defectTypesFile.exists()) {
+                Log.e(TAG, "Defect types file not found: ${defectTypesFile.absolutePath}")
+                showError("未找到缺陷类型文件")
+                return
+            }
+
+            // 读取缺陷类型列表
             val defectTypesList = defectTypesFile.readLines()
                 .filter { it.isNotBlank() }
                 .shuffled()
-            Log.d(TAG, "Loaded defect types: $defectTypesList")
 
             if (defectTypesList.isEmpty()) {
                 Log.e(TAG, "No defect types found in file")
-                showError("产线${currentProductionLine}没有定义缺陷类型")
-                finish()
+                showError("未找到任何缺陷类型")
                 return
             }
 
-            // 检查每个缺陷类型的图片目录
-            defectTypes.clear()
+            // 检查每个缺陷类型的图片
             defectTypesList.forEach { defectType ->
                 val defectTypeDir = File(productionLineDir, defectType)
                 val okDir = File(defectTypeDir, "OK")
@@ -145,33 +180,49 @@ class MainActivity : AppCompatActivity() {
                 if (!okDir.exists()) okDir.mkdirs()
                 if (!ngDir.exists()) ngDir.mkdirs()
 
-                val okPhotos = okDir.listFiles()?.filter { it.isFile && (it.name.endsWith(".jpg", true) || it.name.endsWith(".png", true)) } ?: emptyList()
-                val ngPhotos = ngDir.listFiles()?.filter { it.isFile && (it.name.endsWith(".jpg", true) || it.name.endsWith(".png", true)) } ?: emptyList()
+                val okPhotos = okDir.listFiles { file -> 
+                    file.isFile && (file.name.endsWith(".jpg", true) || 
+                            file.name.endsWith(".jpeg", true) || 
+                            file.name.endsWith(".png", true))
+                }?.toMutableList() ?: mutableListOf()
 
-                Log.d(TAG, "Defect type $defectType - OK photos: ${okPhotos.size}, NG photos: ${ngPhotos.size}")
-                
+                val ngPhotos = ngDir.listFiles { file -> 
+                    file.isFile && (file.name.endsWith(".jpg", true) || 
+                            file.name.endsWith(".jpeg", true) || 
+                            file.name.endsWith(".png", true))
+                }?.toMutableList() ?: mutableListOf()
+
                 if (okPhotos.isNotEmpty() || ngPhotos.isNotEmpty()) {
                     defectTypes[defectType] = mutableListOf()
-                } else {
-                    Log.w(TAG, "No photos found for defect type: $defectType")
+                    defectTypes[defectType]?.addAll(okPhotos)
+                    defectTypes[defectType]?.addAll(ngPhotos)
                 }
             }
 
-            // 开始测试第一个缺陷类型
-            if (defectTypes.isNotEmpty()) {
-                currentDefectType = defectTypes.keys.random()
-                Log.d(TAG, "Starting test with defect type: $currentDefectType")
-                loadRandomImages(currentProductionLine, currentDefectType)
-            } else {
-                Log.e(TAG, "No valid defect types with photos found")
-                showError("没有可用的缺陷类型或缺陷类型中没有图片")
-                finish()
+            if (defectTypes.isEmpty()) {
+                showError("未找到任何缺陷图片")
+                return
             }
-            
+
+            // 创建缺陷类型按钮
+            defectTypes.keys.forEach { defectType ->
+                val button = MaterialButton(this).apply {
+                    text = defectType
+                    layoutParams = LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.MATCH_PARENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT
+                    ).apply {
+                        setMargins(0, 0, 0, 16)
+                    }
+                    setOnClickListener {
+                        startDefectTest(defectType)
+                    }
+                }
+                menuLayout.addView(button)
+            }
         } catch (e: Exception) {
             Log.e(TAG, "Error loading defect data", e)
             showError("加载缺陷数据时出错：${e.message}")
-            finish()
         }
     }
 
@@ -259,12 +310,13 @@ class MainActivity : AppCompatActivity() {
             completedDefectTypes.add(currentDefectType)
             showSuccessDialog("答案正确！") {
                 if (completedDefectTypes.size == defectTypes.size) {
-                    showCompletionDialog()
+                    onTestCompleted()
                 } else {
                     startNextDefectTest()
                 }
             }
         } else {
+            handleDefectTypeError(currentDefectType)
             showErrorDialog("答案错误，请重新选择") {
                 loadRandomImages(currentProductionLine, currentDefectType)
             }
@@ -276,7 +328,7 @@ class MainActivity : AppCompatActivity() {
         val remainingDefectTypes = defectTypes.keys.filter { !completedDefectTypes.contains(it) }
         
         if (remainingDefectTypes.isEmpty()) {
-            showCompletionDialog()
+            onTestCompleted()
             return
         }
 
@@ -286,6 +338,47 @@ class MainActivity : AppCompatActivity() {
         
         // 更新提示文本
         updateInstructionText()
+    }
+
+    private fun onTestCompleted() {
+        val endTime = Date()
+        
+        // 创建测试记录
+        val record = QualityTestRecord(
+            employeeId = intent.getStringExtra("EMPLOYEE_ID") ?: "",
+            productionLine = currentProductionLine,
+            startTime = testStartTime?.time ?: endTime.time,
+            endTime = endTime.time,
+            defectTypeErrors = defectTypeErrors.toMap(),
+            date = endTime,
+            defectType = currentDefectType,
+            defectLocation = "", // 默认为空，因为当前版本不支持位置
+            defectSeverity = "", // 默认为空，因为当前版本不支持严重度
+            isPassed = defectTypeErrors.isEmpty(),
+            testDuration = ((endTime.time - (testStartTime?.time ?: endTime.time)) / 1000).toInt()
+        )
+
+        // 保存记录到数据库
+        try {
+            testRecordDatabase.insertRecord(record)
+            Log.d(TAG, "Test record saved successfully: $record")
+        } catch (e: Exception) {
+            Log.e(TAG, "Failed to save test record", e)
+        }
+
+        // 显示完成对话框
+        AlertDialog.Builder(this)
+            .setTitle("测试完成")
+            .setMessage("恭喜！你已完成所有测试项目。")
+            .setPositiveButton("确定") { _, _ ->
+                finish()
+            }
+            .setCancelable(false)
+            .show()
+    }
+
+    private fun handleDefectTypeError(defectType: String) {
+        defectTypeErrors[defectType] = (defectTypeErrors[defectType] ?: 0) + 1
     }
 
     private fun showCompletionDialog() {
@@ -337,5 +430,15 @@ class MainActivity : AppCompatActivity() {
     private fun updateInstructionText() {
         val htmlText = "请找出图片中所有的<font color='#FF0000'><b>${currentDefectType}</b></font>缺陷"
         titleText.text = android.text.Html.fromHtml(htmlText, android.text.Html.FROM_HTML_MODE_COMPACT)
+    }
+
+    private fun startDefectTest(defectType: String) {
+        currentDefectType = defectType
+        loadRandomImages(currentProductionLine, currentDefectType)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        networkService?.disconnect()
     }
 }

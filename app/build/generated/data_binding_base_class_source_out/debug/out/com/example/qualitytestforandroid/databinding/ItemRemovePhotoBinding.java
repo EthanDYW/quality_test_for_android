@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.card.MaterialCardView;
 import java.lang.NullPointerException;
@@ -55,7 +56,7 @@ public final class ItemRemovePhotoBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.removePhotoButton;
-      ImageView removePhotoButton = rootView.findViewById(id);
+      ImageView removePhotoButton = ViewBindings.findChildViewById(rootView, id);
       if (removePhotoButton == null) {
         break missingId;
       }

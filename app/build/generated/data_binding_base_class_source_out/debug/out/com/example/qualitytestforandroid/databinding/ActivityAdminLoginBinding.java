@@ -10,8 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textfield.TextInputEditText;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -25,6 +27,9 @@ public final class ActivityAdminLoginBinding implements ViewBinding {
   public final MaterialButton backButton;
 
   @NonNull
+  public final MaterialButton connectServerButton;
+
+  @NonNull
   public final LinearLayout inputLayout;
 
   @NonNull
@@ -34,22 +39,37 @@ public final class ActivityAdminLoginBinding implements ViewBinding {
   public final TextInputEditText passwordInput;
 
   @NonNull
+  public final MaterialCardView serverManagementCard;
+
+  @NonNull
+  public final MaterialButton startServerButton;
+
+  @NonNull
   public final TextView titleText;
 
   @NonNull
   public final TextInputEditText usernameInput;
 
+  @NonNull
+  public final MaterialButton viewStatsButton;
+
   private ActivityAdminLoginBinding(@NonNull ConstraintLayout rootView,
-      @NonNull MaterialButton backButton, @NonNull LinearLayout inputLayout,
-      @NonNull MaterialButton loginButton, @NonNull TextInputEditText passwordInput,
-      @NonNull TextView titleText, @NonNull TextInputEditText usernameInput) {
+      @NonNull MaterialButton backButton, @NonNull MaterialButton connectServerButton,
+      @NonNull LinearLayout inputLayout, @NonNull MaterialButton loginButton,
+      @NonNull TextInputEditText passwordInput, @NonNull MaterialCardView serverManagementCard,
+      @NonNull MaterialButton startServerButton, @NonNull TextView titleText,
+      @NonNull TextInputEditText usernameInput, @NonNull MaterialButton viewStatsButton) {
     this.rootView = rootView;
     this.backButton = backButton;
+    this.connectServerButton = connectServerButton;
     this.inputLayout = inputLayout;
     this.loginButton = loginButton;
     this.passwordInput = passwordInput;
+    this.serverManagementCard = serverManagementCard;
+    this.startServerButton = startServerButton;
     this.titleText = titleText;
     this.usernameInput = usernameInput;
+    this.viewStatsButton = viewStatsButton;
   }
 
   @Override
@@ -80,43 +100,68 @@ public final class ActivityAdminLoginBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.backButton;
-      MaterialButton backButton = rootView.findViewById(id);
+      MaterialButton backButton = ViewBindings.findChildViewById(rootView, id);
       if (backButton == null) {
         break missingId;
       }
 
+      id = R.id.connectServerButton;
+      MaterialButton connectServerButton = ViewBindings.findChildViewById(rootView, id);
+      if (connectServerButton == null) {
+        break missingId;
+      }
+
       id = R.id.inputLayout;
-      LinearLayout inputLayout = rootView.findViewById(id);
+      LinearLayout inputLayout = ViewBindings.findChildViewById(rootView, id);
       if (inputLayout == null) {
         break missingId;
       }
 
       id = R.id.loginButton;
-      MaterialButton loginButton = rootView.findViewById(id);
+      MaterialButton loginButton = ViewBindings.findChildViewById(rootView, id);
       if (loginButton == null) {
         break missingId;
       }
 
       id = R.id.passwordInput;
-      TextInputEditText passwordInput = rootView.findViewById(id);
+      TextInputEditText passwordInput = ViewBindings.findChildViewById(rootView, id);
       if (passwordInput == null) {
         break missingId;
       }
 
+      id = R.id.serverManagementCard;
+      MaterialCardView serverManagementCard = ViewBindings.findChildViewById(rootView, id);
+      if (serverManagementCard == null) {
+        break missingId;
+      }
+
+      id = R.id.startServerButton;
+      MaterialButton startServerButton = ViewBindings.findChildViewById(rootView, id);
+      if (startServerButton == null) {
+        break missingId;
+      }
+
       id = R.id.titleText;
-      TextView titleText = rootView.findViewById(id);
+      TextView titleText = ViewBindings.findChildViewById(rootView, id);
       if (titleText == null) {
         break missingId;
       }
 
       id = R.id.usernameInput;
-      TextInputEditText usernameInput = rootView.findViewById(id);
+      TextInputEditText usernameInput = ViewBindings.findChildViewById(rootView, id);
       if (usernameInput == null) {
         break missingId;
       }
 
-      return new ActivityAdminLoginBinding((ConstraintLayout) rootView, backButton, inputLayout,
-          loginButton, passwordInput, titleText, usernameInput);
+      id = R.id.viewStatsButton;
+      MaterialButton viewStatsButton = ViewBindings.findChildViewById(rootView, id);
+      if (viewStatsButton == null) {
+        break missingId;
+      }
+
+      return new ActivityAdminLoginBinding((ConstraintLayout) rootView, backButton,
+          connectServerButton, inputLayout, loginButton, passwordInput, serverManagementCard,
+          startServerButton, titleText, usernameInput, viewStatsButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

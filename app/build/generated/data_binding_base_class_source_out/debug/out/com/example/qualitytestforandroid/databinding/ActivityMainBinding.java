@@ -4,12 +4,15 @@ package com.example.qualitytestforandroid.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.example.qualitytestforandroid.R;
 import com.google.android.material.button.MaterialButton;
 import java.lang.NullPointerException;
@@ -21,25 +24,29 @@ public final class ActivityMainBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final TextView defectTypeText;
-
-  @NonNull
-  public final RecyclerView recyclerView;
+  public final LinearLayout menuLayout;
 
   @NonNull
   public final MaterialButton submitButton;
 
   @NonNull
-  public final RecyclerView thumbnailRecyclerView;
+  public final RecyclerView thumbnailList;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView defectTypeText,
-      @NonNull RecyclerView recyclerView, @NonNull MaterialButton submitButton,
-      @NonNull RecyclerView thumbnailRecyclerView) {
+  @NonNull
+  public final TextView titleText;
+
+  @NonNull
+  public final ViewPager2 viewPager;
+
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull LinearLayout menuLayout,
+      @NonNull MaterialButton submitButton, @NonNull RecyclerView thumbnailList,
+      @NonNull TextView titleText, @NonNull ViewPager2 viewPager) {
     this.rootView = rootView;
-    this.defectTypeText = defectTypeText;
-    this.recyclerView = recyclerView;
+    this.menuLayout = menuLayout;
     this.submitButton = submitButton;
-    this.thumbnailRecyclerView = thumbnailRecyclerView;
+    this.thumbnailList = thumbnailList;
+    this.titleText = titleText;
+    this.viewPager = viewPager;
   }
 
   @Override
@@ -69,32 +76,38 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.defectTypeText;
-      TextView defectTypeText = rootView.findViewById(id);
-      if (defectTypeText == null) {
-        break missingId;
-      }
-
-      id = R.id.recyclerView;
-      RecyclerView recyclerView = rootView.findViewById(id);
-      if (recyclerView == null) {
+      id = R.id.menuLayout;
+      LinearLayout menuLayout = ViewBindings.findChildViewById(rootView, id);
+      if (menuLayout == null) {
         break missingId;
       }
 
       id = R.id.submitButton;
-      MaterialButton submitButton = rootView.findViewById(id);
+      MaterialButton submitButton = ViewBindings.findChildViewById(rootView, id);
       if (submitButton == null) {
         break missingId;
       }
 
-      id = R.id.thumbnailRecyclerView;
-      RecyclerView thumbnailRecyclerView = rootView.findViewById(id);
-      if (thumbnailRecyclerView == null) {
+      id = R.id.thumbnailList;
+      RecyclerView thumbnailList = ViewBindings.findChildViewById(rootView, id);
+      if (thumbnailList == null) {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, defectTypeText, recyclerView,
-          submitButton, thumbnailRecyclerView);
+      id = R.id.titleText;
+      TextView titleText = ViewBindings.findChildViewById(rootView, id);
+      if (titleText == null) {
+        break missingId;
+      }
+
+      id = R.id.viewPager;
+      ViewPager2 viewPager = ViewBindings.findChildViewById(rootView, id);
+      if (viewPager == null) {
+        break missingId;
+      }
+
+      return new ActivityMainBinding((ConstraintLayout) rootView, menuLayout, submitButton,
+          thumbnailList, titleText, viewPager);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

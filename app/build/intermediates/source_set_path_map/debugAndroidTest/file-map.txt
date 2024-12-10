@@ -1,0 +1,9 @@
+com.example.qualitytestforandroid.test.app-jetified-core-1.5.0-0 C:\Users\Ethan D\.gradle\caches\transforms-3\68c9c83bcddb6f11a503e25523a1069d\transformed\jetified-core-1.5.0\res
+com.example.qualitytestforandroid.test.app-jetified-annotation-experimental-1.1.0-1 C:\Users\Ethan D\.gradle\caches\transforms-3\b131ab1074b39836b09e49023b349996\transformed\jetified-annotation-experimental-1.1.0\res
+com.example.qualitytestforandroid.test.app-androidTest-2 E:\quality_test_for_android\app\build\generated\res\resValues\androidTest\debug
+com.example.qualitytestforandroid.test.app-androidTest-3 E:\quality_test_for_android\app\build\generated\res\rs\androidTest\debug
+com.example.qualitytestforandroid.test.app-mergeDebugAndroidTestResources-4 E:\quality_test_for_android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.qualitytestforandroid.test.app-mergeDebugAndroidTestResources-5 E:\quality_test_for_android\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.qualitytestforandroid.test.app-merged_res-6 E:\quality_test_for_android\app\build\intermediates\merged_res\debugAndroidTest
+com.example.qualitytestforandroid.test.app-androidTest-7 E:\quality_test_for_android\app\src\androidTest\res
+com.example.qualitytestforandroid.test.app-androidTestDebug-8 E:\quality_test_for_android\app\src\androidTestDebug\res

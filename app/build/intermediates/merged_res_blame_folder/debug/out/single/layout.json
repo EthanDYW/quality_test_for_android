@@ -1,0 +1,82 @@
+[
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_admin.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_admin.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_chart_display.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_chart_display.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_export_records.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_export_records.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_photo_library.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_photo_library.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_production_line.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_production_line.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_photo_library_selector.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_photo_library_selector.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_thumbnail.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_thumbnail.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_production_line.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_production_line.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_main.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_remove_photo.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_remove_photo.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_login.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_admin_login.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_admin_login.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_defect_type.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_defect_type.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/dialog_connect_server.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/dialog_connect_server.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_image_viewer.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_image_viewer.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/dialog_date_range_picker.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/dialog_date_range_picker.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_photo.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_photo.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_defect_types.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_defect_types.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/activity_admin_main.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/activity_admin_main.xml"
+    },
+    {
+        "merged": "com.example.qualitytestforandroid.app-mergeDebugResources-32:/layout/item_add_photo.xml",
+        "source": "com.example.qualitytestforandroid.app-main-35:/layout/item_add_photo.xml"
+    }
+]

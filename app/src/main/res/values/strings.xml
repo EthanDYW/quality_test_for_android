@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">质量门员工岗前测试系统</string>
+    <string name="hint_employee_id">输入工号</string>
+    <string name="hint_select_line">选择产线</string>
+    <string name="btn_login">登录</string>
+    
+    <!-- 产线选项 -->
+    <string-array name="production_lines">
+        <item>Enclosure</item>
+        <item>Top Cover</item>
+        <item>PH Cover</item>
+        <item>轮罩</item>
+        <item>后端板</item>
+        <item>衣帽板</item>
+        <item>行李箱</item>
+    </string-array>
+</resources>

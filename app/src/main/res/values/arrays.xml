@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="defect_types">
+        <item>外观缺陷</item>
+        <item>功能缺陷</item>
+        <item>尺寸缺陷</item>
+        <item>材料缺陷</item>
+        <item>其他缺陷</item>
+    </string-array>
+
+    <string-array name="defect_locations">
+        <item>前面板</item>
+        <item>后盖</item>
+        <item>侧边</item>
+        <item>接口处</item>
+        <item>屏幕</item>
+        <item>按键</item>
+        <item>其他位置</item>
+    </string-array>
+
+    <string-array name="defect_severities">
+        <item>轻微</item>
+        <item>中等</item>
+        <item>严重</item>
+        <item>致命</item>
+    </string-array>
+</resources>
